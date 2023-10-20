@@ -1,14 +1,17 @@
-import './App.css'
-import User from "./components/User.jsx";
-import Clock from "./components/Clock.jsx";
+
+import Home from "./Home/Home.jsx";
+import Order from "./Order/Order.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
     return (
-        <>
-            <User/>
-            <Clock/>
-        </>
-    )
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/order" element={<Order />}/>
+        </Routes>
+    </BrowserRouter>
+    );
 }
 
-export default App
+export default App;

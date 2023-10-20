@@ -58,6 +58,14 @@ function Home() {
         }
 
     }
+     const copyToClipboard = async(text) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("Copied to clipboard!");
+        }catch (err) {
+            console.error("Failed to copy: ", err);
+        }
+    };
     const CancelBtn = (ref) => {
         ref.current.style.display = 'none'
     }
@@ -180,7 +188,7 @@ function Home() {
                         </div>
                         <div className="Random" style={{display: "none"}} ref={randomBlock}>
                             <p>Your pizza configuration has been saved.</p>
-                            <p>Your pizza number is :{random}</p>
+                             <p>Your pizza number is :<span className="randomSpan" onClick={() => copyToClipboard(random)}>{random}</span></p>
                         </div>
                     </div>
                 </div>

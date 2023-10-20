@@ -88,7 +88,7 @@ function Order() {
                             <span>Yes</span>
                         </div>
                         <div>
-                            <input type="radio" name="client" id="2"/>
+                            <input type="radio" name="client" id="2" checked/>
                             <span>No</span>
                         </div>
                     </div>
